@@ -21,9 +21,12 @@
     interrupt-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;//IGPIO
 };
 
-// pmw-3610
+// pmw-3610 (TEST: trackball disabled)
 &trackball_listener {
-    status = "okay";
+    status = "disabled";
     compatible = "zmk,input-listener";
     device = <&trackball>;
 };
+
+&trackball { status = "disabled"; };
+&spi0 { status = "disabled"; };
